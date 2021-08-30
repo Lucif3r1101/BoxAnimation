@@ -1,0 +1,141 @@
+<!-- Developed by Rishav Raj
+Date - 30/08/2021 -->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>AVRL Box Transition</title>
+		<link rel="stylesheet" type="text/css">
+		<meta charset="utf-8">
+
+        <!-- CSS -->
+        
+        <style>
+        html, body {
+	    width: 100%;
+	    height: 100%;
+	    overflow: hidden;
+        }
+
+        #black-box {
+            width: 700px;
+            height: 300px;
+            background: black;
+            margin: auto;
+            margin-top: 100px;
+        }
+
+        #bar-container {
+            position: relative;
+            width: 98%;
+            height: 94%;
+            margin: auto;
+            top: 3%;
+            display: flex;
+            flex-direction: row;
+            align-items: stretch;
+            transform: scaleY(-1);
+            transition-property: height;
+        }
+
+        #bar-1 {
+            position: relative;
+            background:#7D67B3;
+            height: 100%;
+            transition-duration:  1s;
+            width: 20%;
+        }
+
+        #bar-2 {
+            position: relative;
+            background:#E07DA1;
+            height: 100%;
+            transition-duration:  1s;
+            width: 20%;
+        }
+
+        #bar-3 {
+            position: relative;
+            background: salmon;
+            height: 100%;
+            transition-duration:  1s;
+            width: 20%;
+        }
+
+        #bar-4 {
+            position: relative;
+            background: #FA995A;
+            height: 100%;
+            transition-duration:  1s;
+            width: 20%;
+        }
+
+        #bar-5 {
+            position: relative;
+            background: rgb(253, 166, 3);
+            height: 100%;
+            transition-duration:  1s;
+            width: 20%;
+        }
+
+        .button-container {
+            width: 700px;
+            margin: auto;
+            margin-top: 50px;
+            display: flex;
+            justify-content: space-around;
+            font-size: 28px;
+        }
+
+        #start {
+            position: relative;
+            background-color: green;
+        }
+
+        #stop {
+            position: relative;
+            background-color: red;
+        }
+
+        
+        </style>
+
+        <!-- Javascript function -->
+
+        <script type="text/javascript">
+        
+        var add;
+        function start(){
+            
+                add = setInterval(
+                    function(){
+                        for(var input=1; input<=5;input++){
+                            document.getElementById("bar-"+input).style.height = Math.floor((Math.random()*100)+1)+"%"; }}, 1000);
+        }
+        </script>
+	    </head>
+	    <body>
+		<div id="black-box">
+			<div id="bar-container">
+				<div id="bar-1">
+				</div>
+				<div id="bar-2">
+				</div>
+				<div id="bar-3">
+				</div>
+				<div id="bar-4">
+				</div>
+				<div id="bar-5">
+				</div>
+			</div>
+		</div>
+		<div class="button-container">
+			<div>
+				<button onclick="start();" id="start">Start</button>
+			</div>
+			<div>
+				<button id="stop" onclick="clearInterval(add)">Stop</button>
+			</div>
+		</div>
+	</body>
+</html>
